@@ -47,9 +47,7 @@ def face_crop(front_image,azure_vision,azure_vision_endpoint):
     front_image.save(img_bytes, format='JPEG')
     binary_image = img_bytes.getvalue()
 
-    payload = json.dumps({
-    "url": "https://retailcontosoclothing.blob.core.windows.net/data/f178eeec-ad47-4a48-af2c-79683a4f1357.jpg?sp=r&st=2023-05-02T16:25:37Z&se=2023-06-01T00:25:37Z&spr=https&sv=2021-12-02&sr=b&sig=fxMuPxvlZO4hkkaCekn2LaEDc1PcDmL%2BNq7mBQ3gWgo%3D"
-    })
+
     headers = {
     'Content-Type': 'application/octet-stream',
     'Ocp-Apim-Subscription-Key': azure_vision
@@ -83,7 +81,7 @@ def face_crop(front_image,azure_vision,azure_vision_endpoint):
 
 def U_crop(removal):
     # Retrieve the custom mask image from URL
-    mask_url = "https://retailcontosoclothing.blob.core.windows.net/data4/U_mask.png"
+    mask_url = "https://live.staticflickr.com/65535/52987563543_a5c471eed6_b.jpg"
     response = requests.get(mask_url)
     mask_image = Image.open(BytesIO(response.content)).convert("L")
 

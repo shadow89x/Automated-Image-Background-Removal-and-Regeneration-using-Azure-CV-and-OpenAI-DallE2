@@ -167,8 +167,8 @@ def main():
 
         # Define a list of image URLs
         image_urls = [
-            "https://retailcontosoclothing.blob.core.windows.net/data4/GettyImages-157692462.jpg",
-            "https://retailcontosoclothing.blob.core.windows.net/data4/GettyImages-1336682514.jpg"
+            "https://live.staticflickr.com/65535/52986497892_40d6af301d_b.jpg",
+            "https://live.staticflickr.com/65535/52986498092_28b4ccd382_b.jpg"
             # Add more image URLs here if needed
         ]
 
@@ -177,13 +177,13 @@ def main():
 
         # Wait for the user to select a tab
         selected_tab = st.radio("Select an image:", image_urls)
-        if selected_tab == "https://retailcontosoclothing.blob.core.windows.net/data4/GettyImages-157692462.jpg":
+        if selected_tab == "https://live.staticflickr.com/65535/52986497892_40d6af301d_b.jpg":
             cloth_width = 850
             x,y =65,175
             default_width=400
             default_x=290
             default_y=10
-        elif selected_tab == "https://retailcontosoclothing.blob.core.windows.net/data4/GettyImages-1336682514.jpg":
+        elif selected_tab == "https://live.staticflickr.com/65535/52986498092_28b4ccd382_b.jpg":
             cloth_width = 650
             x,y =150,250
             default_width=300
