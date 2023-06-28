@@ -30,6 +30,60 @@ Main features include:
 4. Run `streamlit run app.py` from your command line.
 5. Access the app by navigating to the URL displayed in your terminal (usually `http://localhost:8501`).
 
+## Working with the Application
+
+Before diving into the workings of the application, ensure that you've set up your environment correctly. You will need API keys from OpenAI and Azure Computer Vision. If you don't have organization key, leave the corresponding variable in the code blank.
+
+### 1. Background Replacement using OpenAI DallE2 and Azure Computer Vision
+
+The first feature of this application allows you to replace the background of an image using OpenAI's DallE2 and Azure's Computer Vision. Here's how it works:
+
+1. Upload a photo.
+2. Azure Computer Vision removes the background of your image.
+3. OpenAI's DallE2 generates an image from your prompt and replaces the background with this image.
+
+<img src="https://live.staticflickr.com/65535/53006832402_a79ca2bfd2_z.jpg" width="500">
+
+After the images are generated, you can move and resize the result using the slider in the sidebar.
+
+<img src="https://live.staticflickr.com/65535/53007424136_54713a8ed4_z.jpg" width="500">
+
+### 2. Background Replacement using OpenAI DallE2 Edit and Azure Computer Vision
+
+The second feature is another method of changing the background. This time, we'll use OpenAI's DallE2 edit feature.
+
+1. Remove the background with Azure's Computer Vision.
+2. 'Extend' the missing image parts using the DallE2 edit feature by providing a prompt.
+
+<img src="https://live.staticflickr.com/65535/53007590829_4c86fdeef4_z.jpg" width="500">
+
+You'll need to resize and move the previously generated DallE2 edit image (since the edit feature fills the image based on the prompt). For optimal results, use a sufficiently large front image. If the front image is too small compared to the canvas size, the outcome might not be satisfactory.
+
+<img src="https://live.staticflickr.com/65535/53007590819_3d64590929_z.jpg" width="500">
+
+Below is an example of the result:
+
+<img src="https://live.staticflickr.com/65535/53007908343_26bcf17a7c_z.jpg" width="500">
+
+### 3. Virtual Try-On with Online Shopping
+
+Ever wished you could try on clothes while shopping online? This application feature makes that possible. 
+
+1. Upload a photo of your face. Azure Computer Vision will recognize your facial coordinates and crop the image.
+2. By using OpenAI's edit feature, you can virtually try on the clothing of your choice.
+
+First, select your clothing and provide a prompt for the background:
+
+<img src="https://live.staticflickr.com/65535/53007590834_b13830bbd0_c.jpg" width="500">
+
+Then, upload your photo:
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Elon_Musk_Royal_Society_%28crop2%29.jpg" width="500">
+
+Here's an example result:
+
+<img src="https://live.staticflickr.com/65535/53007424161_af45a274a1_z.jpg" width="500">
+
 ## Code Structure
 
 The application is primarily structured in two Python files: 
